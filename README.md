@@ -24,6 +24,6 @@ WebGL published here (EDIT IT!) https://seantheshort.github.io/UnityGitProject/
 - [x] I understand that I should create a new branch for each feature or fix I am working on;
 - [x] I have read the `.github/workflows/main.yml` file and understand how the GitHub Actions are working;
 - [x] If I want to customize my build, I will read the https://game.ci/docs/github/builder/ documentation; 
-- [ ] I have read Semantic Versioning https://semver.org/ and understand how to version my project;
-- [ ] I have read how Semantic versioning would work for unity here https://game.ci/docs/github/builder/#versioning 
-- [ ] I have set my first git tag to `0.1.0` to my latest commit on the `main` or `master` branch;
+- [x] I have read Semantic Versioning https://semver.org/ and understand how to version my project;
+- [x] I have read how Semantic versioning would work for unity here https://game.ci/docs/github/builder/#versioning 
+- [x] I have set my first git tag to `0.1.0` to my latest commit on the `main` or `master` branch;
