@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     private float jumpTimer = 1;
     public bool onGround;
     private float fallTimer = 0f;
+    private bool playerDead = false;
     public Vector3 respawnPos;
     
     // GameObject References
@@ -28,7 +29,7 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         // Checking if onGround
-        onGround = Physics2D.CircleCast(transform.position, 0.1f, Vector2.down, 0.1f, LayerMask.GetMask("Ground"));
+        onGround = Physics2D.CircleCast(transform.position, 0.05f, Vector2.down, 0.05f, LayerMask.GetMask("Ground"));
         
         // Controlling Horizontal Movement
         horizontalMovement = Input.GetAxis("Horizontal");
@@ -52,6 +53,14 @@ public class PlayerManager : MonoBehaviour
             playerSprite.transform.localScale = new Vector3(1, 1, 1);
             rb.AddForce(new Vector2(0f, jumpForce * jumpTimer));
             jumpTimer = 1;
+            
+        }
+        // Jumping when going off platform
+        else if (!onGround && rb.velocity.y < 0 && jumpTimer > 1.1f)
+        {
+            playerSprite.transform.localScale = new Vector3(1, 1, 1);
+            rb.AddForce(new Vector2(0f, jumpForce * jumpTimer));
+            jumpTimer = 1;
         }
         
         // Land Squash Effect
@@ -62,16 +71,17 @@ public class PlayerManager : MonoBehaviour
             playerSprite.transform.localScale = new Vector3(1 + fallTimer, Mathf.Max(1/(fallTimer/2 + 1), 0.1f), 1);
             fallTimer = 0;
         }
+        
+        // Checking for boundary death
+        if (transform.position.y <= -7.5f && !playerDead)
+            StartCoroutine(playerDeath());
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         // Death Collision
         if (other.gameObject.layer == 7)
-        {
-            Debug.Log("Player Death");
             StartCoroutine(playerDeath());
-        }
         
         // Respawn Collision
         else if (other.CompareTag("Respawn"))
@@ -84,19 +94,21 @@ public class PlayerManager : MonoBehaviour
     IEnumerator playerDeath()
     {
         // Summons Particles & Disables Player
+        playerDead = true;
         Instantiate(deathParticles, transform.position, Quaternion.identity);
         rb.velocity = Vector2.zero;
-        rb.isKinematic = true;
+        rb.simulated = false;
         playerSprite.GetComponent<SpriteRenderer>().enabled = false;
         
         // Waits a second
         yield return new WaitForSeconds(1);
         
         // Returns player to respawn position and enables player
+        playerDead = false;
         transform.position = respawnPos;
         playerSprite.GetComponent<SpriteRenderer>().enabled = true;
         playerSprite.transform.localScale = new Vector3(1, 1, 1);
-        rb.isKinematic = false;
+        rb.simulated = true;
         
     }
 }
