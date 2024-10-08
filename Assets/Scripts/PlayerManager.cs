@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,17 @@ public class PlayerManager : MonoBehaviour
     private float jumpTimer = 1;
     public bool onGround;
     private float fallTimer = 0f;
+    public Vector3 respawnPos;
     
     // GameObject References
     public Rigidbody2D rb;
-    public Transform playerSprite;
+    public GameObject playerSprite;
+    public GameObject deathParticles;
+
+    void Start()
+    {
+        respawnPos = transform.position;
+    }
 
     void Update()
     {
@@ -62,8 +70,27 @@ public class PlayerManager : MonoBehaviour
         if (other.gameObject.layer == 7)
         {
             Debug.Log("Player Death");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            
+            StartCoroutine(playerDeath());
+
         }
+    }
+
+    IEnumerator playerDeath()
+    {
+        // Summons Particles & Disables Player
+        Instantiate(deathParticles, transform.position, Quaternion.identity);
+        rb.velocity = Vector2.zero;
+        rb.isKinematic = true;
+        playerSprite.GetComponent<SpriteRenderer>().enabled = false;
+        
+        // Waits a second
+        yield return new WaitForSeconds(1);
+        
+        // Returns player to respawn position and enables player
+        transform.position = respawnPos;
+        playerSprite.GetComponent<SpriteRenderer>().enabled = true;
+        playerSprite.transform.localScale = new Vector3(1, 1, 1);
+        rb.isKinematic = false;
+        
     }
 }
