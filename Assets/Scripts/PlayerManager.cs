@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -52,6 +53,17 @@ public class PlayerManager : MonoBehaviour
         {
             playerSprite.transform.localScale = new Vector3(1 + fallTimer, Mathf.Max(1/(fallTimer/2 + 1), 0.1f), 1);
             fallTimer = 0;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Death Collision
+        if (other.gameObject.layer == 7)
+        {
+            Debug.Log("Player Death");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         }
     }
 }
