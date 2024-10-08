@@ -71,7 +71,13 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log("Player Death");
             StartCoroutine(playerDeath());
-
+        }
+        
+        // Respawn Collision
+        else if (other.CompareTag("Respawn"))
+        {
+            respawnPos = other.transform.position;
+            Destroy(other.gameObject);
         }
     }
 
