@@ -15,11 +15,18 @@ public class UIManager : MonoBehaviour
     // Game Object References
     public TMP_Text coinsText;
     public GameObject pauseScreen;
+    private AudioSource audioSource;
+    
+    // Audio
+    public AudioClip coinSound;
+    public AudioClip buttonSound;
 
     void Start()
     {
         // Setting Initial Coin Text
         coinsText.text = Mathf.Round(coins).ToString();
+        
+        audioSource = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -42,7 +49,13 @@ public class UIManager : MonoBehaviour
 
     public void MenuReturn()
     {
+        audioSource.PlayOneShot(buttonSound);
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void collectCoin()
+    {
+        audioSource.PlayOneShot(coinSound);
     }
 }

@@ -37,6 +37,7 @@ public class CoinManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            coinManager.collectCoin();
             coinManager.targetCoins += coinValue;
             Destroy(gameObject);
         }

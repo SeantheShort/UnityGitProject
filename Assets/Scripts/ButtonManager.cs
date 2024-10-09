@@ -13,6 +13,7 @@ public class ButtonManager : MonoBehaviour
     
     // Game Object References
     public Image transitionScreen;
+    public AudioSource audioSource;
 
     void Update()
     {
@@ -33,6 +34,7 @@ public class ButtonManager : MonoBehaviour
     // Quit Button
     public void QuitGame()
     {
+        audioSource.Play();
         Debug.Log("Game Quit!");
         Application.Quit();
     }
@@ -41,6 +43,7 @@ public class ButtonManager : MonoBehaviour
     public void SwitchScene()
     {
         // Activating Transition
+        audioSource.Play();
         alphaGoal = 1;
     }
 }

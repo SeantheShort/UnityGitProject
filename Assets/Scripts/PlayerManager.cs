@@ -20,10 +20,17 @@ public class PlayerManager : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject playerSprite;
     public GameObject deathParticles;
+    private AudioSource audioSource;
+    // Sounds
+    public AudioClip jumpSound;
+    public AudioClip jumpCharge;
+    public AudioClip playerDie;
+    public AudioClip playerLand;
 
     void Start()
     {
         respawnPos = transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -38,6 +45,13 @@ public class PlayerManager : MonoBehaviour
         //Jump Timing
         if (Input.GetButton("Jump") && jumpTimer <= 2f && onGround)
         {
+            // Play Charge Sound
+            if (audioSource.clip != jumpCharge && !audioSource.isPlaying)
+            {
+                audioSource.clip = jumpCharge;
+                audioSource.Play();
+            }
+
             jumpTimer += Time.deltaTime;
             playerSprite.transform.localScale += new Vector3(1f, -0.75f, 0) * Time.deltaTime;
             
@@ -50,6 +64,9 @@ public class PlayerManager : MonoBehaviour
         // Jumping
         if ((Input.GetButtonUp("Jump") || jumpTimer >= 2) && onGround)
         {
+            audioSource.Stop();
+            audioSource.PlayOneShot(jumpSound);
+            audioSource.clip = null;
             playerSprite.transform.localScale = new Vector3(1, 1, 1);
             rb.AddForce(new Vector2(0f, jumpForce * jumpTimer));
             jumpTimer = 1;
@@ -58,6 +75,9 @@ public class PlayerManager : MonoBehaviour
         // Jumping when going off platform
         else if (!onGround && rb.velocity.y < 0 && jumpTimer > 1.1f)
         {
+            audioSource.Stop();
+            audioSource.PlayOneShot(jumpSound);
+            audioSource.clip = null;
             playerSprite.transform.localScale = new Vector3(1, 1, 1);
             rb.AddForce(new Vector2(0f, jumpForce * jumpTimer));
             jumpTimer = 1;
@@ -68,6 +88,7 @@ public class PlayerManager : MonoBehaviour
 
         if (onGround && fallTimer > 0)
         {
+            audioSource.PlayOneShot(playerLand, Mathf.Clamp(fallTimer, 0.1f, 1f));
             playerSprite.transform.localScale = new Vector3(1 + fallTimer, Mathf.Max(1/(fallTimer/2 + 1), 0.1f), 1);
             fallTimer = 0;
         }
@@ -93,6 +114,10 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator playerDeath()
     {
+        // Plays Sound
+        audioSource.Stop();
+        audioSource.PlayOneShot(playerDie);
+        
         // Summons Particles & Disables Player
         playerDead = true;
         Instantiate(deathParticles, transform.position, Quaternion.identity);
