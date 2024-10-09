@@ -116,6 +116,7 @@ public class PlayerManager : MonoBehaviour
     {
         // Plays Sound
         audioSource.Stop();
+        audioSource.clip = null;
         audioSource.PlayOneShot(playerDie);
         
         // Summons Particles & Disables Player

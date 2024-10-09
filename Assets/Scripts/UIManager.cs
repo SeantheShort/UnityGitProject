@@ -15,11 +15,15 @@ public class UIManager : MonoBehaviour
     // Game Object References
     public TMP_Text coinsText;
     public GameObject pauseScreen;
+    public GameObject winScreen;
     private AudioSource audioSource;
+    public GameObject player;
+    public GameObject winParticles;
     
     // Audio
     public AudioClip coinSound;
     public AudioClip buttonSound;
+    public AudioClip winSound;
 
     void Start()
     {
@@ -56,6 +60,16 @@ public class UIManager : MonoBehaviour
 
     public void collectCoin()
     {
-        audioSource.PlayOneShot(coinSound);
+        if (targetCoins < 70)
+            // Normal Coin System
+            audioSource.PlayOneShot(coinSound);
+        else
+        {
+            // Win Coin System
+            audioSource.PlayOneShot(winSound);
+            player.GetComponent<Rigidbody2D>().simulated = false;
+            winScreen.SetActive(true);
+            Instantiate(winParticles, player.transform.position + new Vector3(0, 3f, 0), Quaternion.identity);
+        }
     }
 }
