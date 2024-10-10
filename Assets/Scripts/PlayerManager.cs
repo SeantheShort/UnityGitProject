@@ -36,7 +36,7 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
         // Checking if onGround
-        onGround = Physics2D.CircleCast(transform.position, 0.05f, Vector2.down, 0.05f, LayerMask.GetMask("Ground"));
+        onGround = Physics2D.BoxCast(transform.position, new Vector2(1, 0.05f), 0, Vector2.down, 0.05f, LayerMask.GetMask("Ground"));
         
         // Controlling Horizontal Movement
         horizontalMovement = Input.GetAxis("Horizontal");
