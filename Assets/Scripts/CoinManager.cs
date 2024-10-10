@@ -11,7 +11,7 @@ public class CoinManager : MonoBehaviour
     // Game Object References
     public Sprite oneCoin, fiveCoin, tenCoin;
     public SpriteRenderer spriteRenderer;
-    
+    public GameObject coinParticles;
     public UIManager coinManager;
     
     void Start()
@@ -39,6 +39,7 @@ public class CoinManager : MonoBehaviour
         {
             coinManager.targetCoins += coinValue;
             coinManager.collectCoin();
+            Instantiate(coinParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -174,6 +174,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 15176493}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &15176492
 BoxCollider2D:
@@ -587,7 +588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.64705884, g: 0.7882353, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -793,6 +794,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 146534038}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &146534037
 BoxCollider2D:
@@ -942,6 +944,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 262314166}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &262314165
 BoxCollider2D:
@@ -1354,6 +1357,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 410036072}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &410036071
 BoxCollider2D:
@@ -1503,6 +1507,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 426917089}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &426917088
 BoxCollider2D:
@@ -1916,6 +1921,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 478617703}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &478617702
 BoxCollider2D:
@@ -2142,6 +2148,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 523701845}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &523701844
 BoxCollider2D:
@@ -2421,6 +2428,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 667774186}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &667774185
 BoxCollider2D:
@@ -2898,6 +2906,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 756696942}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &756696941
 BoxCollider2D:
@@ -3047,6 +3056,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 761144274}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &761144273
 BoxCollider2D:
@@ -3434,6 +3444,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 893524862}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &893524861
 BoxCollider2D:
@@ -3892,6 +3903,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1133237169}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1133237168
 BoxCollider2D:
@@ -4439,6 +4451,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1236099735}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1236099734
 BoxCollider2D:
@@ -4770,6 +4783,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1274071079}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1274071081
 BoxCollider2D:
@@ -4867,6 +4881,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1389355698}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1389355697
 BoxCollider2D:
@@ -5243,6 +5258,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1410775403}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1410775402
 BoxCollider2D:
@@ -5798,6 +5814,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1512769163}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1512769162
 BoxCollider2D:
@@ -6202,6 +6219,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1632657845}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1632657844
 BoxCollider2D:
@@ -6962,6 +6980,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1766604182}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1766604181
 BoxCollider2D:
@@ -7295,6 +7314,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1866409592}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1866409591
 BoxCollider2D:
@@ -7444,6 +7464,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1935891500}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1935891499
 BoxCollider2D:
@@ -7593,6 +7614,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1965898532}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1965898531
 BoxCollider2D:
@@ -7799,7 +7821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.64705884, g: 0.7882353, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7875,6 +7897,7 @@ MonoBehaviour:
   fiveCoin: {fileID: 21300000, guid: 096593c3dafbfda4a884a781d62412c4, type: 3}
   tenCoin: {fileID: 21300000, guid: 02c56a606ddde2b4082cda1e4cf4840f, type: 3}
   spriteRenderer: {fileID: 1999639616}
+  coinParticles: {fileID: 3089819202916672531, guid: a49581e901bba914082ae87157508b4f, type: 3}
   coinManager: {fileID: 375231904}
 --- !u!61 &1999639615
 BoxCollider2D:
