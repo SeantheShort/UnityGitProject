@@ -131,6 +131,7 @@ public class PlayerManager : MonoBehaviour
         
         // Returns player to respawn position and enables player
         playerDead = false;
+        fallTimer = 0;
         transform.position = respawnPos;
         playerSprite.GetComponent<SpriteRenderer>().enabled = true;
         playerSprite.transform.localScale = new Vector3(1, 1, 1);
