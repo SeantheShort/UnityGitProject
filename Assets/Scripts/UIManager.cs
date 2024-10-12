@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
     {
         // Setting Initial Coin Text
         coinsText.text = Mathf.Round(coins).ToString();
-        
+        targetCoins = 69;
         audioSource = GetComponent<AudioSource>();
     }
     
