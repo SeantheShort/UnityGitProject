@@ -10,12 +10,11 @@ public class UIManager : MonoBehaviour
     // Variables
     public float coins = 0;
     public float targetCoins = 0;
-    public bool gamePaused = false;
     
     // Game Object References
     public TMP_Text coinsText;
-    public GameObject pauseScreen;
-    public GameObject winScreen;
+    public RectTransform menuButton;
+    public GameObject winText;
     private AudioSource audioSource;
     public GameObject player;
     public GameObject winParticles;
@@ -29,7 +28,6 @@ public class UIManager : MonoBehaviour
     {
         // Setting Initial Coin Text
         coinsText.text = Mathf.Round(coins).ToString();
-        targetCoins = 69;
         audioSource = GetComponent<AudioSource>();
     }
     
@@ -41,20 +39,11 @@ public class UIManager : MonoBehaviour
             coins = Mathf.MoveTowards(coins, targetCoins, 0.25f);
             coinsText.text = Mathf.Round(coins).ToString();
         }
-        
-        // Setting Pause Variable and Time Speed
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            gamePaused = !gamePaused;
-            pauseScreen.SetActive(gamePaused);
-            Time.timeScale = Convert.ToInt32(!gamePaused);
-        }
     }
 
     public void MenuReturn()
     {
         audioSource.PlayOneShot(buttonSound);
-        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -68,7 +57,8 @@ public class UIManager : MonoBehaviour
             // Win Coin System
             audioSource.PlayOneShot(winSound);
             player.GetComponent<Rigidbody2D>().simulated = false;
-            winScreen.SetActive(true);
+            winText.SetActive(true);
+            menuButton.anchoredPosition = new Vector2(0, -300);
             Instantiate(winParticles, player.transform.position + new Vector3(0, 3f, 0), Quaternion.identity);
         }
     }

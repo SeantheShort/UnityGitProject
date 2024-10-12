@@ -14,7 +14,6 @@ public class ButtonManager : MonoBehaviour
     // Game Object References
     public Image transitionScreen;
     public AudioSource audioSource;
-    public ColorManager colorManager;
 
     void Update()
     {
@@ -23,7 +22,7 @@ public class ButtonManager : MonoBehaviour
         {
             // Lerping
             currentAlpha = Mathf.MoveTowards(currentAlpha, alphaGoal, Time.deltaTime * 5);
-            transitionScreen.color = new Color(colorManager.universalColor.r, colorManager.universalColor.g, colorManager.universalColor.b, currentAlpha);
+            transitionScreen.color = new Color(0.6431373f, 0.7843137f, 1, currentAlpha);
             
             // Changing Scene
             if (Mathf.Abs(alphaGoal-currentAlpha) < 0.01f)
